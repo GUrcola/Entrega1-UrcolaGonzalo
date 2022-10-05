@@ -20,5 +20,5 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('familiares/', views.ver_familia),
-    path('crear_familiar/', views.crear_familiar)
+    path('crear_familiar/str:nombre/str:apellido/int:edad/', views.crear_familiar)
  ]

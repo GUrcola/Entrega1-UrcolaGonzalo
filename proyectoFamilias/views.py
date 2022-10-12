@@ -1,20 +1,18 @@
-from random import Random, random
 from re import template
 from django.http import HttpResponse
-from datetime import date, datetime
 from django.template import Context, Template, loader
 from Familia.models import familiares
+from django.shortcuts import render
 
 def crear_familiar (request,nombre,apellido,edad):
     familia= familiares(nombre=nombre,apellido=apellido,edad=edad)
-    familiares.save(nombre,apellido,edad)
+    familia.save(nombre,apellido,edad)
 
 
-    cargar_archivo= open(r'C:\Users\Tango\Desktop\Familia-Proyecto\Templates\crear_familiar.html','r')
-    template= Template(cargar_archivo.read())
-    cargar_archivo.close()
-    template_renderizado= template.render()
-    return HttpResponse (template_renderizado)  
+    # template= loader.get_template('crear_familiar.html')
+    # template_renderizado= template.render()
+    # return HttpResponse (template_renderizado)  
+    return render(request, 'Familia/crear_familiar.html', {'familia': familia})
 
 
 

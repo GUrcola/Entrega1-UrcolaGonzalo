@@ -1,9 +1,8 @@
 from django.contrib import admin
-from django.urls import path
-from . import views
+from django.urls import path, include
+
 
 urlpatterns = [
+    path ('Familia/', include('Familia.urls.py')),
     path('admin/', admin.site.urls),
-    path('familiares/', views.ver_familia),
-    path('crear-familiar/<str:nombre>/<str:apellido>/<int:edad>/', views.crear_familiar)
  ]

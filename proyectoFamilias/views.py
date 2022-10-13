@@ -6,13 +6,11 @@ from django.shortcuts import render
 
 def crear_familiar (request,nombre,apellido,edad):
     familia= familiares(nombre=nombre,apellido=apellido,edad=edad)
-    familia.save(nombre,apellido,edad)
-
-
+    familia.save()
     # template= loader.get_template('crear_familiar.html')
     # template_renderizado= template.render()
     # return HttpResponse (template_renderizado)  
-    return render(request, 'Familia/crear_familiar.html', {'familia': familia})
+    return render(request,'crear_familiar.html',{'familia': familia})
 
 
 

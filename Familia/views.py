@@ -24,5 +24,6 @@ def ver_familia (request):
       
 #    return HttpResponse(template_renderizado) 
       
-
+def index (request):
+    return render(request, 'familia/index.html')
 

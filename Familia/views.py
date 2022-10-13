@@ -1,6 +1,7 @@
 from re import template
 from django.http import HttpResponse
-from django.template import Context, Template, loader
+from django.template import Context, Template
+# loader
 from Familia.models import familiares
 from django.shortcuts import render
 
@@ -17,7 +18,7 @@ def crear_familiar (request,nombre,apellido,edad):
 def ver_familia (request):
    
    familia=familiares.objects.all()
-   return render(request,'Familia/ver_familiar.html',{'familia': familia}) 
+   return render(request,'Familia/ver_familia.html',{'familia': familia}) 
 #    template= loader.get_template('ver_familia.html')
 #    template_renderizado=template.render({'familia': familia})
       

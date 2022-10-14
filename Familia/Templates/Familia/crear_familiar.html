@@ -3,9 +3,15 @@
 <h1 class="mb-5">Crear Familia</h1>
 {% endblock 'Texto Inicio' %}  
 {% block 'mi_contenido'  %}
+<form action={% url 'crear familiar' %} method="POST">
+{% csrf_token %}
+<input type="text" placeholder="Nombre" name='Nombre'>
+<input type="text" placeholder="Apellido" name'Apellido'>
+<input type="submit" value="CREAR">
+
+</form>
 
 <p>Alta exitosa. Bienvenido a la Familia.</p> 
-
 <a class="navbar-brand" href={% url 'Index' %}>Index</a>        
 {% endblock 'mi_contenido' %}    
 

@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <p>Lista de familiares :</p>    
+{% extends 'Base/PadreCod.html' %}
+{% block 'Texto Inicio' %}
+<h1 class="mb-5">Ver Familia</h1>
+{% endblock 'Texto Inicio' %}  
+{% block 'mi_contenido'  %}
+ <p>Lista de familiares :</p>    
     {% for familiares in familia %}
         <li>{{familiares.apellidos}}{{familiares.nombre}}{{familiares.edad}}</li>
     {% endfor %}
+
+    <a class="navbar-brand" href={% url 'Index' %}>Index</a>        
+{% endblock 'mi_contenido' %}    
+
+   
     
-</body>
-</html>

@@ -1,15 +1,28 @@
 {% extends 'Base/PadreCod.html' %}
-{% block 'Texto Inicio' %}
+{% block Texto_Inicio %}
 <h1 class="mb-5">Ver Familia</h1>
-{% endblock 'Texto Inicio' %}  
-{% block 'mi_contenido'  %}
- <p>Lista de familiares :</p>    
+{% endblock Texto_Inicio %}  
+{% block mi_contenido  %}
+ <p>Lista de familiares :</p>  
+
+ <form action={% url 'ver familiar' %} method="GET">
+     {{formulario}}   
+    <button>Buscar</button>
+</form>
+<p>
+    {% if familiares %}
     {% for familiares in familia %}
         <li>{{familiares.apellidos}}{{familiares.nombre}}{{familiares.edad}}</li>
     {% endfor %}
+    {% else %}
+    <p>No se encontraron resultados</p>
+    {% endif %}
+     
+</p>
+
 
     <a class="navbar-brand" href={% url 'Index' %}>Index</a>        
-{% endblock 'mi_contenido' %}    
+{% endblock mi_contenido %}    
 
-   
-    
+
+

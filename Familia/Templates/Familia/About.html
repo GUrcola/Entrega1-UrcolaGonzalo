@@ -1,13 +1,17 @@
 {% extends 'Base/PadreCod.html' %}
 
-{% block 'Texto Inicio' %}
+{% block Texto_Inicio %}
 <h1 class="mb-5">Sobre mi</h1>
-{% endblock 'Texto Inicio' %}  
-{% block 'mi_contenido'  %}
+{% endblock Texto_Inicio %}  
+{% block mi_contenido  %}
 
-
+<p>
+Mi nombre es Gonzalo Urcola, tengo 23 años y soy de San Rafael,Mendoza,Argentina.
+Actualmente estudio en la Universidad Nacional de Cuyo la carrera de Contador Publico y me gustaria complementar con todo lo referido a programacion y analisis de datos.
+Me gustan los deportes, mucho, y al dia de hoy estoy en mi año numero 16 de rugby pero de chico hice de todo.
+</p>
 
 <a class="navbar-brand" href={% url 'Index' %}>Index</a>  
-{% endblock 'mi_contenido' %}    
+{% endblock mi_contenido %}    
 
   

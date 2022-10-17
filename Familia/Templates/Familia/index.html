@@ -1,5 +1,5 @@
     <body>
-        {% block 'mi_contenido'  %}
+        {% block mi_contenido  %}
           <!-- Masthead-->
         <header class="masthead">
             <div class="container position-relative">
@@ -7,16 +7,17 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            {% block 'Texto Inicio' %}
-                            <h1 class="mb-5">¡Proyecto Familia!</h1>
-                            {% endblock 'Texto Inicio' %}                            
-                           
+                            <h1 class="mb-5">
+                                {% block Texto_Inicio %}
+                                ¡Proyecto Familia!
+                                {% endblock Texto_Inicio %}                            
+                            </h1>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-        {% endblock 'mi_contenido' %}    
+        {% endblock mi_contenido %}    
 
       
     </body>

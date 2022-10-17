@@ -11,8 +11,8 @@
 </form>
 <p>
     {% if familiares %}
-    {% for familiares in familia %}
-        <li>{{familiares.apellidos}}{{familiares.nombre}}{{familiares.edad}}</li>
+         {% for familiares in familia %}
+         <li>{{familiares.apellidos}}{{familiares.nombre}}{{familiares.edad}}</li>
     {% endfor %}
     {% else %}
     <p>No se encontraron resultados</p>

@@ -12,10 +12,11 @@ def crear_familiar (request):
         formulario= MiFamilia(request.POST)
         if formulario.is_valid(): 
             data=formulario.cleaned_data
-            nombre= data ['nombre']
-            apellido= data ['apellido']
+            familia= familiares(
+            nombre= data ['nombre'],
+            apellido= data ['apellido'],
             edad= data ['edad']
-            familia= familiares(nombre=nombre,apellido=apellido)
+            )
             familia.save()
             return redirect('ver_familia')    
     

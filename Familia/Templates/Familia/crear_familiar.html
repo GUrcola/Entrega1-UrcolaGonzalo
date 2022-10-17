@@ -1,24 +1,16 @@
 {% extends 'Base/PadreCod.html' %}
 {% block Texto_Inicio %}
 <h1 class="mb-5">Crear Familiar</h1>
-{% endblock Texto_Inicio %}  
+{% endblock Texto_Inicio %} 
+
 {% block mi_contenido  %}
 <form action={% url 'crear familiar' %} method="POST">
-{% csrf_token %}
-<table>
- {{formulario}}   
-</table>
-<button>Crear</button>
-{% comment %} <label for="Nombre">Nombre</label>
-<input type="text" placeholder="Nombre" name='Nombre'>
-<label for="Apellido">Apellido</label>
-<input type="text" placeholder="Apellido" name='Apellido'>
-<input type="submit" value="CREAR"> {% endcomment %}
-
-</form>
-
-<p>Alta exitosa. Bienvenido a la Familia.</p> 
-<a class="navbar-brand" href={% url 'Index' %}>Index</a>        
+    {% csrf_token %}
+    <table>
+         {{formulario}}   
+    </table>
+    <button type="submit">Crear</button>
+</form>     
 {% endblock mi_contenido %}    
 
    

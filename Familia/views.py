@@ -30,7 +30,9 @@ def crear_familiar (request):
 
 
 def ver_familia (request):
-   nombre= request.GET.get('nombre')
+    
+   nombre= request.GET.get('nombre', None)
+   
    if nombre:
        familia= familiares.objects.filter(nombre_icontains= nombre) 
    else:
